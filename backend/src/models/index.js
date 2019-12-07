@@ -2,7 +2,7 @@
 import Sequelize from 'sequelize'
 
 // Configuration
-import { $db } from '../../config' 
+import { $db } from '../../config'
 
 // DB Connection
 const { database, username, password, dialect } = $db()

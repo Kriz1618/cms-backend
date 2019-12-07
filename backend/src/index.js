@@ -5,8 +5,8 @@ import { ApolloServer, makeExecutableSchema } from 'apollo-server'
 import models from './models'
 
 // Types definition and resolvers
-import resolvers from '../src/graphql/resolvers'
-import typeDefs from '../src/graphql/types'
+import resolvers from './graphql/resolvers'
+import typeDefs from './graphql/types'
 
 
 // Schema
@@ -25,8 +25,9 @@ const apolloServer = new ApolloServer({
 
 // Runnig apollo server
 const alter = true
-const force = false
+const force = true
 
 models.sequelize.sync({ alter, force }).then(() => {
+  // eslint-disable-next-line no-console
   apolloServer.listen(5000).then(({ url }) => console.log(`Running on ${url}`))
 })

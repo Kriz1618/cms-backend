@@ -1,4 +1,4 @@
-export default (sequelize, {BOOLEAN, STRING, TEXT, UUID, UUIDV4}) => {
+export default (sequelize, { BOOLEAN, STRING, TEXT, UUID, UUIDV4 }) => {
   const Post = sequelize.define('Post', {
     id: {
       primaryKey: true,
